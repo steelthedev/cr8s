@@ -4,7 +4,10 @@ WORKDIR /app/
 
 COPY . .
 
-RUN cargo install diesel_cli  --no-default-features --features postgres
+RUN apt-get update && apt-get install -y libpq-dev
+RUN cargo install diesel_cli --no-default-features --features postgres
 RUN cargo install cargo-watch
 
-CMD ["cargo", "watch", "--why", "-x", "build"]
+EXPOSE 8000
+
+CMD ["cargo", "run", "--release", "--", "0.0.0.0:8000"]
