@@ -1,4 +1,6 @@
+
 use crate::models::NewRustacean;
+use crate::models::Rustacean;
 use crate::repositories::RustaceanRepository;
 use rocket::http::Status;
 use rocket::response::status::Custom;

@@ -1,1 +1,1 @@
-mod rustaceans;
+pub mod rustaceans;
